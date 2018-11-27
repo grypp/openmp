@@ -491,11 +491,11 @@ EXTERN int omp_get_level_(void) { return omp_get_level(); }
 
 EXTERN int omp_get_active_level_(void) { return omp_get_active_level(); }
 
-EXTERN int omp_get_ancestor_thread_num_(int level) {
-  return omp_get_ancestor_thread_num(level);
+EXTERN int omp_get_ancestor_thread_num_(int* level) {
+  return omp_get_ancestor_thread_num(*level);
 }
 
-EXTERN int omp_get_team_size_(int level) { return omp_get_team_size(level); }
+EXTERN int omp_get_team_size_(int* level) { return omp_get_team_size(*level); }
 
 EXTERN int omp_get_default_device_(void) { return omp_get_default_device(); }
 
@@ -519,7 +519,7 @@ EXTERN int omp_get_cancellation_(void) { return omp_get_cancellation(); }
 
 EXTERN int omp_get_dynamic_(void) { return omp_get_dynamic(); }
 
-EXTERN void omp_lib_osnt4_(int num) { omp_set_num_threads(num); }
+EXTERN void omp_lib_osnt4_(int* num) { omp_set_num_threads(*num); }
 
-EXTERN void omp_lib_osmal4_(int level) { omp_set_max_active_levels(level); }
+EXTERN void omp_lib_osmal4_(int* level) { omp_set_max_active_levels(*level); }
 #endif
